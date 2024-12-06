@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    
+        <header>
+            <div class="header-content">
+                <i class="fas fa-star"></i> 
+                <h1>Título de la Página</h1>
+            </div>            
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#reviews">Reseñas</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <main>
+        <section id="productos">
+            <h2>Productos</h2>
+            <div class="productos-container">
+                <div class="producto-card" data-index="0">
+                    <img src="Imagenes /Productos/producto1.png" alt="Producto 1">
+                    <h3>Producto 1</h3>
+                    <p>Descripción del producto 1.</p>
+                    <div class="descripcion-ampliada"></div>
+                    <button class="Compra">Comprar</button>
+                    <button class="Description">Ver más</button>
+                </div>
+                <div class="producto-card" data-index="1">
+                    <img src="Imagenes /Productos/producto2.jpg" alt="Producto 2">
+                    <h3>Producto 2</h3>
+                    <p>Descripción del producto 2.</p>
+                    <div class="descripcion-ampliada"></div>
+                    <button class="Compra">Comprar</button>
+                    <button class="Description">Ver más</button>
+
+                </div>
+                <div class="producto-card" data-index="2">
+                    <img src="Imagenes /Productos/producto3.png" alt="Producto 3">
+                    <h3>Producto 3</h3>
+                    <p>Descripción del producto 3.</p>
+                    <div class="descripcion-ampliada"></div>
+                    <button class="Compra">Comprar</button>
+                    <button class="Description">Ver más</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="carrito-section">
+            <h3>Carrito de Compras</h3>
+            <div id="carrito"></div> <!-- Contenedor para los productos del carrito -->
+            <div id="total-carrito">Total del carrito: $0.00</div> <!-- Total del carrito -->
+        </section>
+
+        <section id="reviews">
+            <h2>Reseñas de Nuestros Clientes</h2>
+            <div class="review-grid">
+                <div class="review">
+                    <p>"Excelente servicio y atención al cliente. ¡Recomendado!"</p>
+                    <h4>- Juan Pérez</h4>
+                </div>
+                <div class="review">
+                    <p>"Los productos son de alta calidad y llegaron a tiempo."</p>
+                    <h4>- María López</h4>
+                </div>
+                <div class="review">
+                    <p>"Una experiencia maravillosa, definitivamente volveré a comprar."</p>
+                    <h4>- Carlos García</h4>
+                </div>
+                <div class="review">
+                    <p>"Me encantó la variedad de productos y la facilidad de compra."</p>
+                    <h4>- Ana Martínez</h4>
+                </div>
+            </div>
+        </section>     
+
+        <section id="contacto">
+            <h1>Formulario de Contacto</h1>
+            <br>
+            <form action="https://formspree.io/f/manyjdjz" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+        
+                <button type="submit">Enviar</button>
+            </formd>
+        </section>
+        </main>
+<br>        
+<br>
+        <footer>
+            <div class="social-media">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="Imagenes /Iconos/facebook-icon.png" alt="Facebook">
+                </a>
+                <br>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <img src="Imagenes /Iconos/twitter-icon.png" alt="Twitter">
+                </a>
+                <br>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="Imagenes /Iconos/instagram-icon.png" alt="Instagram">
+                </a>
+                <br>
+                </a>
+            </div>
+        </footer>
+    <script src="Javascript /script.js"></script>
+    </body>   
+</html>

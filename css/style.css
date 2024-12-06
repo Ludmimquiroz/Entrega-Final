@@ -1,0 +1,267 @@
+
+body{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #005B5C;
+}
+
+
+
+header {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Usar flexbox para alinear el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
+}
+
+.header-content {
+    display: flex; /* Usar flexbox para alinear ícono y título */
+    align-items: center; /* Centrar verticalmente el ícono y el título */
+}
+
+.header-content i {
+    font-size: 2em; /* Tamaño del ícono */
+    margin-right: 10px; /* Espacio entre el ícono y el título */
+}
+
+h1 {
+    font-size: 2em; /* Tamaño del título */
+    margin: 0; /* Eliminar márgenes */
+}
+
+
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav ul li {
+    margin-right: 20px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#contacto {
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario */
+}
+
+h2 {
+    color:#ddd;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espacio entre los campos */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Asegura que los campos ocupen todo el ancho */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff; /* Color del botón */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+
+button:hover {
+    background-color: #0056b3; /* Color del botón al pasar el mouse */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    #contacto {
+        padding: 20px; /* Menos padding en pantallas más pequeñas */
+    }
+
+    button {
+        width: 100%; /* Botón ocupa todo el ancho en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em; /* Tamaño de fuente más pequeño para encabezados */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 14px; /* Tamaño de fuente más pequeño en campos */
+    }
+
+    button {
+        font-size: 14px; /* Tamaño de fuente más pequeño en botón */
+        padding: 10px; /* Ajustar padding del botón */
+    }
+}
+
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las cartas se envuelvan */
+    justify-content: space-between; /* Espacio entre las cartas */
+}
+
+/* Estilos de la carta del producto */
+.producto-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    flex: 1 1 calc(25% - 20px); /* Ajustar el ancho de las cartas */
+    max-width: calc(25% - 20px); /* Ancho máximo de las cartas */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.producto-card:hover {
+    transform: scale(1.05); /* Efecto de hover */
+}
+
+.producto-card img {
+    max-width: 100%; /* Hacer que la imagen sea responsiva */
+    height: auto;
+    border-radius: 4px;
+}
+
+
+
+.reviews {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; /* Espacio entre las reseñas */
+}
+
+.review {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.review:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.review h4 {
+    margin-top: 15px;
+    color: #555;
+    font-weight: normal;
+}
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los íconos */
+}
+
+.social-media a img {
+    width: 30px; /* Tamaño de los íconos */
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-media a img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+#carrito-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#carrito-section h3{
+    text-align: center;
+    margin-top: 0;
+}
+
+#carrito {
+    margin: 10px 0;
+    max-height: 200px;
+    overflow-y: auto; /* Permite el desplazamiento si hay muchos productos */
+}
+
+#carrito div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#carrito div:last-child {
+    border-bottom: none; /* Elimina el borde del último elemento */
+}
+
+/* Estilos para el total del carrito */
+#total-carrito {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
