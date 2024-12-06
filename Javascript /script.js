@@ -26,23 +26,23 @@ productos.forEach(producto => {
 });
 
 function agregarDescripcion(event) {
-    const button = event.target; // El botón que fue clickeado
-    const productoCard = button.closest('.producto-card'); // Encontrar la tarjeta del producto
-    const index = productoCard.getAttribute('data-index'); // Obtener el índice del producto
-    const descripcionContainer = productoCard.querySelector('.descripcion-ampliada'); // Contenedor para la descripción ampliada
+    const button = event.target; 
+    const productoCard = button.closest('.producto-card'); 
+    const index = productoCard.getAttribute('data-index'); 
+    const descripcionContainer = productoCard.querySelector('.descripcion-ampliada'); 
 
-    // Verificar si ya se ha agregado la descripción
+    
     if (descripcionContainer.innerHTML === "") {
         const descripcionAmpliada = document.createElement('p');
-        descripcionAmpliada.textContent = productos[index].description; // Obtener la descripción del producto
-        descripcionContainer.appendChild(descripcionAmpliada); // Agregar la descripción al contenedor
+        descripcionAmpliada.textContent = productos[index].description; 
+        descripcionContainer.appendChild(descripcionAmpliada); 
     } else {
-        // Si ya existe, puedes optar por eliminarla o mostrar un mensaje
+
         alert("La descripción ya está visible.");
     }
 }
 
-// Agregar eventos a los botones "Ver más"
+
 const botonesVerMas = document.querySelectorAll('.Description');
 botonesVerMas.forEach(button => {
     button.addEventListener('click', agregarDescripcion);
@@ -51,38 +51,37 @@ botonesVerMas.forEach(button => {
 
 
 function agregarAlCarrito(event) {
-    const button = event.target; // El botón que fue clickeado
-    const productoCard = button.closest('.producto-card'); // Encontrar la tarjeta del producto
-    const index = productoCard.getAttribute('data-index'); // Obtener el índice del producto
+    const button = event.target; 
+    const productoCard = button.closest('.producto-card'); 
+    const index = productoCard.getAttribute('data-index'); 
 
-    // Crear un objeto del producto a agregar al carrito
+    
     const productoSeleccionado = {
         name: productos[index].name,
         description: productos[index].description,
         amount: productos[index].amount
     };
 
-    // Agregar el producto al carrito
+    
     carrito.push(productoSeleccionado);
-    totalCarrito += productoSeleccionado.amount; // Sumar el precio al total
+    totalCarrito += productoSeleccionado.amount; 
 
-    // Actualizar la visualización del carrito
+    
     actualizarCarrito();
 }
 
-// Función para actualizar la visualización del carrito
-function actualizarCarrito() {
-    const carritoContainer = document.getElementById('carrito'); // Contenedor del carrito
-    carritoContainer.innerHTML = ''; // Limpiar el contenedor
 
-    // Mostrar cada producto en el carrito
+function actualizarCarrito() {
+    const carritoContainer = document.getElementById('carrito'); 
+    carritoContainer.innerHTML = ''; 
+    
     carrito.forEach(producto => {
         const productoDiv = document.createElement('div');
         productoDiv.textContent = `${producto.name} - $${producto.amount.toFixed(2)}`;
         carritoContainer.appendChild(productoDiv);
     });
 
-    // Mostrar el total del carrito
+    
     const totalDiv = document.getElementById('total-carrito');
     totalDiv.textContent = `Total del carrito: $${totalCarrito.toFixed(2)}`;
 }

@@ -9,26 +9,26 @@ body{
 
 
 header {
-    background-color: #4CAF50; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 20px; /* Espaciado interno */
-    display: flex; /* Usar flexbox para alinear el contenido */
-    align-items: center; /* Centrar verticalmente el contenido */
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 20px; 
+    display: flex; 
+    align-items: center; 
 }
 
 .header-content {
-    display: flex; /* Usar flexbox para alinear ícono y título */
-    align-items: center; /* Centrar verticalmente el ícono y el título */
+    display: flex; 
+    align-items: center; 
 }
 
 .header-content i {
-    font-size: 2em; /* Tamaño del ícono */
-    margin-right: 10px; /* Espacio entre el ícono y el título */
+    font-size: 2em; 
+    margin-right: 10px; 
 }
 
 h1 {
-    font-size: 2em; /* Tamaño del título */
-    margin: 0; /* Eliminar márgenes */
+    font-size: 2em;
+    margin: 0; 
 }
 
 
@@ -66,8 +66,8 @@ section {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centrar el formulario */
+    max-width: 600px; 
+    margin: 0 auto; 
 }
 
 h2 {
@@ -77,7 +77,7 @@ h2 {
 }
 
 .form-group {
-    margin-bottom: 15px; /* Espacio entre los campos */
+    margin-bottom: 15px; 
 }
 
 label {
@@ -89,7 +89,7 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%; /* Asegura que los campos ocupen todo el ancho */
+    width: 100%; 
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -101,7 +101,7 @@ textarea {
 }
 
 button {
-    background-color: #007bff; /* Color del botón */
+    background-color: #007bff; 
     color: white;
     border: none;
     padding: 10px 15px;
@@ -114,45 +114,45 @@ button {
 
 
 button:hover {
-    background-color: #0056b3; /* Color del botón al pasar el mouse */
+    background-color: #0056b3; 
 }
 
-/* Media Queries para Responsividad */
+
 @media (max-width: 768px) {
     #contacto {
-        padding: 20px; /* Menos padding en pantallas más pequeñas */
+        padding: 20px; 
     }
 
     button {
-        width: 100%; /* Botón ocupa todo el ancho en pantallas pequeñas */
+        width: 100%; 
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px){
     h2 {
-        font-size: 1.5em; /* Tamaño de fuente más pequeño para encabezados */
+        font-size: 1.5em; 
     }
 
     input[type="text"],
     input[type="email"],
     textarea {
-        font-size: 14px; /* Tamaño de fuente más pequeño en campos */
+        font-size: 14px; 
     }
 
     button {
-        font-size: 14px; /* Tamaño de fuente más pequeño en botón */
-        padding: 10px; /* Ajustar padding del botón */
+        font-size: 14px; 
+        padding: 10px;
     }
 }
 
 
 .productos-container {
     display: flex;
-    flex-wrap: wrap; /* Permitir que las cartas se envuelvan */
-    justify-content: space-between; /* Espacio entre las cartas */
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-/* Estilos de la carta del producto */
+
 .producto-card {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -160,18 +160,18 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 10px;
     padding: 15px;
-    flex: 1 1 calc(25% - 20px); /* Ajustar el ancho de las cartas */
-    max-width: calc(25% - 20px); /* Ancho máximo de las cartas */
+    flex: 1 1 calc(25% - 20px); 
+    max-width: calc(25% - 20px); 
     text-align: center;
     transition: transform 0.3s;
 }
 
 .producto-card:hover {
-    transform: scale(1.05); /* Efecto de hover */
+    transform: scale(1.05); 
 }
 
 .producto-card img {
-    max-width: 100%; /* Hacer que la imagen sea responsiva */
+    max-width: 100%; 
     height: auto;
     border-radius: 4px;
 }
@@ -187,7 +187,7 @@ button:hover {
 .review-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px; /* Espacio entre las reseñas */
+    gap: 20px; 
 }
 
 .review {
@@ -200,7 +200,7 @@ button:hover {
 }
 
 .review:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    transform: translateY(-5px); 
 }
 
 .review h4 {
@@ -218,17 +218,17 @@ footer {
 .social-media {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Espacio entre los íconos */
+    gap: 15px; 
 }
 
 .social-media a img {
-    width: 30px; /* Tamaño de los íconos */
+    width: 30px; 
     height: 30px;
     transition: transform 0.3s;
 }
 
 .social-media a img:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+    transform: scale(1.1); 
 }
 
 #carrito-section {
@@ -247,7 +247,7 @@ footer {
 #carrito {
     margin: 10px 0;
     max-height: 200px;
-    overflow-y: auto; /* Permite el desplazamiento si hay muchos productos */
+    overflow-y: auto; 
 }
 
 #carrito div {
@@ -256,10 +256,10 @@ footer {
 }
 
 #carrito div:last-child {
-    border-bottom: none; /* Elimina el borde del último elemento */
+    border-bottom: none; 
 }
 
-/* Estilos para el total del carrito */
+
 #total-carrito {
     font-weight: bold;
     font-size: 1.2em;
