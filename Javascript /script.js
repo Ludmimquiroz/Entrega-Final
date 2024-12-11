@@ -1,17 +1,17 @@
 const productos = [
     {
         name: "Producto 1",
-        description: "Descripción del producto 1",
+        description: "Descripción ampliada del producto 1",
         amount: 10.99
     },
     {
         name: "Producto 2",
-        description: "Descripción del producto 2",
+        description: "Descripción ampliada del producto 2",
         amount: 15.49
     },
     {
         name: "Producto 3",
-        description: "Descripción del producto 3",
+        description: "Descripción ampliada del producto 3",
         amount: 7.99
     }
 ];
