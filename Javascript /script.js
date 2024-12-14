@@ -16,9 +16,6 @@ const productos = [
     }
 ];
 
-let carrito = [];
-let totalCarrito = 0;
-
 productos.forEach(producto => {
     console.log(`Nombre: ${producto.name}`);
     console.log(`Descripción: ${producto.description}`);
@@ -50,26 +47,67 @@ botonesVerMas.forEach(button => {
 
 
 
+let carrito = [];
+let totalCarrito = 0;
+
+// Cargar el carrito desde localStorage al iniciar
+function cargarCarrito() {
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+        carrito = JSON.parse(carritoGuardado);
+        totalCarrito = carrito.reduce((total, producto) => total + (producto.amount * producto.quantity), 0);
+        actualizarCarrito();
+    }
+}
+
 function agregarAlCarrito(event) {
     const button = event.target; 
     const productoCard = button.closest('.producto-card'); 
     const index = productoCard.getAttribute('data-index'); 
 
-    
     const productoSeleccionado = {
         name: productos[index].name,
         description: productos[index].description,
-        amount: productos[index].amount
+        amount: productos[index].amount,
+        quantity: 1 // Agregamos una propiedad para la cantidad
     };
 
-    
-    carrito.push(productoSeleccionado);
-    totalCarrito += productoSeleccionado.amount; 
+    // Verificamos si el producto ya está en el carrito
+    const productoExistente = carrito.find(producto => producto.name === productoSeleccionado.name);
+    if (productoExistente) {
+        // Si existe, aumentamos la cantidad
+        productoExistente.quantity++;
+        totalCarrito += productoExistente.amount; // Aumentamos el total
+    } else {
+        // Si no existe, lo agregamos al carrito
+        carrito.push(productoSeleccionado);
+        totalCarrito += productoSeleccionado.amount; 
+    }
 
-    
     actualizarCarrito();
 }
 
+function aumentarCantidad(producto) {
+    producto.quantity++;
+    totalCarrito += producto.amount; // Aumentamos el total
+    actualizarCarrito();
+}
+
+function disminuirCantidad(producto) {
+    if (producto.quantity > 1) {
+        producto.quantity--;
+        totalCarrito -= producto.amount; // Disminuimos el total
+    } else {
+        eliminarProducto(producto);
+    }
+    actualizarCarrito();
+}
+
+function eliminarProducto(producto) {
+    carrito = carrito.filter(item => item.name !== producto.name);
+    totalCarrito -= producto.amount; // Disminuimos el total
+    actualizarCarrito();
+}
 
 function actualizarCarrito() {
     const carritoContainer = document.getElementById('carrito'); 
@@ -77,14 +115,48 @@ function actualizarCarrito() {
     
     carrito.forEach(producto => {
         const productoDiv = document.createElement('div');
-        productoDiv.textContent = `${producto.name} - $${producto.amount.toFixed(2)}`;
+        productoDiv.textContent = `${producto.name} - $${producto.amount.toFixed(2)} (Cantidad: ${producto.quantity})`;
+
+        // Botón para aumentar cantidad
+        const btnAumentar = document.createElement('button');
+        btnAumentar.textContent = '+';
+        btnAumentar.classList.add('carrito-boton'); // Agregar clase
+        btnAumentar.addEventListener('click', () => aumentarCantidad(producto));
+        productoDiv.appendChild(btnAumentar);
+
+        // Botón para disminuir cantidad
+        const btnDisminuir = document.createElement('button');
+        btnDisminuir.textContent = '-';
+        btnDisminuir.classList.add('carrito-boton'); // Agregar clase
+        btnDisminuir.addEventListener('click', () => disminuirCantidad(producto));
+        productoDiv.appendChild(btnDisminuir);
+
+        // Botón para eliminar producto
+        const btnEliminar = document.createElement('button');
+        btnEliminar.textContent = 'Eliminar';
+        btnEliminar.classList.add('carrito-boton'); // Agregar clase
+        btnEliminar.addEventListener('click', () => eliminarProducto(producto));
+        productoDiv.appendChild(btnEliminar);
+
         carritoContainer.appendChild(productoDiv);
     });
 
-    
     const totalDiv = document.getElementById('total-carrito');
     totalDiv.textContent = `Total del carrito: $${totalCarrito.toFixed(2)}`;
+
+    // Guardar el carrito en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+    const totalDiv = document.getElementById('total-carrito');
+    totalDiv.textContent = `Total del carrito: $${totalCarrito.toFixed(2)}`;
+
+    // Guardar el carrito en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+
+// Cargar el carrito al iniciar
+cargarCarrito();
 
 const botonesComprar = document.querySelectorAll('.Compra');
 botonesComprar.forEach(button => {

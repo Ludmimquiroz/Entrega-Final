@@ -265,3 +265,20 @@ footer {
     font-size: 1.2em;
     margin-top: 10px;
 }
+
+.carrito-boton {
+    margin-left: 5px; /* Espacio a la izquierda */
+    margin-right: 5px; /* Espacio a la derecha */
+    margin-top: 5px; /* Espacio arriba */
+    margin-bottom: 5px; /* Espacio abajo */
+    padding: 5px 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.carrito-boton:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
