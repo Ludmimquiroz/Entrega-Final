@@ -162,3 +162,57 @@ const botonesComprar = document.querySelectorAll('.Compra');
 botonesComprar.forEach(button => {
     button.addEventListener('click', agregarAlCarrito);
 });
+
+    async function fetchExtras() {
+        const url = 'https://fakestoreapi.com/products';
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Error al obtener los productos');
+            }
+
+            const products = await response.json();
+            displayProducts(products.slice(0, 3)); // Mostrar solo los primeros 3 productos
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    async function fetchProducts() {
+        const url = 'https://fakestoreapi.com/products';
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Error al obtener los productos');
+            }
+
+            const products = await response.json();
+            displayProducts(products.slice(0, 3)); // Mostrar solo los primeros 3 productos
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    function displayProducts(products) {
+        const extrasContainer = document.getElementById('extras-container');
+        extrasContainer.innerHTML = ''; // Limpiar productos anteriores
+
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('producto-card');
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.title}">
+                <h3>${product.title}</h3>
+                <p>${product.description.substring(0, 60)}...</p>
+                <p>Precio: $${product.price}</p>
+                <button class="Compra">Comprar</button>
+                <button class="Description">Ver más</button>
+            `;
+            extrasContainer.appendChild(productCard);
+        });
+    }
+
+    // Llama a la función para obtener productos al cargar la página
+    window.onload = fetchProducts;

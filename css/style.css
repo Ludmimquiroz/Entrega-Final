@@ -282,3 +282,24 @@ footer {
 .carrito-boton:hover {
     background-color: #0056b3; /* Color de fondo al pasar el mouse */
 }
+
+.extras-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.extras-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.extra-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
